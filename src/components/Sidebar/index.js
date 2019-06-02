@@ -38,7 +38,7 @@ export default class index extends Component {
     }
 
     handleCheck = (id) => {
-        $('.main-sidebar').toggleClass('open');
+            $('.main-sidebar').toggleClass('open');
     }
 
     render() {
@@ -79,7 +79,7 @@ export default class index extends Component {
                                 <div className="nav-wrapper">
                                     <ul className="nav flex-column">
                                         <NavLink to="/deshboard">
-                                            <li onClick={() => this.setState({ id1: "active", id2: "",id3: "", togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0 close" }) } className={id1 === 'active' ? "nav-item active" : "nav-item"}>
+                                            <li onClick={() => this.setState({ id1: "active", id2: "",id3: "", togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0 close" })} className={id1 === 'active' ? "nav-item active" : "nav-item"}>
                                                 <a className="nav-link " >
 
                                                     <i className="material-icons">edit</i>
