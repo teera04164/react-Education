@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Deshboard from '../../container/Deshboard'
 import { NavLink } from 'react-router-dom'
 import routes from '../../routes'
+import $ from 'jquery'
 // import $ from 'Jquery'
 export default class index extends Component {
     constructor() {
@@ -15,7 +16,19 @@ export default class index extends Component {
 
     }
     componentDidMount() {
+        $( ".nav-item" ).click(this.handleCheck)
 
+          
+
+        
+      
+
+    }
+
+    ClickAgain = () =>{
+        $( ".material-icons" ).click( event =>{
+            console.log("event2",event)
+        })
     }
 
     getId = (id) => {
@@ -25,10 +38,7 @@ export default class index extends Component {
     }
 
     handleCheck = (id) => {
-        // $('.toggle-sidebar').click(function (e) {
-        //     $('.main-sidebar').toggleClass('open');
-        //   })
-
+        $('.main-sidebar').toggleClass('open');
     }
 
     render() {
@@ -50,7 +60,7 @@ export default class index extends Component {
                                                 <span className="d-none d-md-inline ml-1 " >Shards Dashboard</span>
                                             </div>
                                         </a>
-                                        <a className="toggle-sidebar d-sm-inline d-md-none d-lg-none">
+                                        <a className="toggle-sidebar d-sm-inline d-md-none d-lg-none" id = "sidebar">
                                             <i className="material-icons"></i>
                                         </a>
                                     </nav>
@@ -69,7 +79,7 @@ export default class index extends Component {
                                 <div className="nav-wrapper">
                                     <ul className="nav flex-column">
                                         <NavLink to="/deshboard">
-                                            <li onClick={() => this.setState({ id1: "active", id2: "",id3: "", togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0 close" })} className={id1 === 'active' ? "nav-item active" : "nav-item"}>
+                                            <li onClick={() => this.setState({ id1: "active", id2: "",id3: "", togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0 close" }) } className={id1 === 'active' ? "nav-item active" : "nav-item"}>
                                                 <a className="nav-link " >
 
                                                     <i className="material-icons">edit</i>
