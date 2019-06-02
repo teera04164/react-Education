@@ -1,112 +1,77 @@
 import React from "react";
-import { Route, Link} from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+import { Card, CardBody, CardTitle, Button , Container, Row, Col } from "shards-react";
 
 const User = ({ match }) => <p>{match.params.id}</p>;
 
 class Users extends React.Component {
     render() {
-    return (
-        <div>
-            <main className="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3 ">
-                <div className="main-content-container container-fluid px-4">
-                    <div className="page-header row no-gutters py-4">
-                        <div className="col-4 col-sm-4 text-center text-sm-left mb-0">
-                            <span className="text-uppercase page-subtitle">Dashboard</span>
-                        </div>
+        return (
+            <div>
+                <main className="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3 ">
+                    <div className="main-content-container container-fluid px-4 mt-4">
+                        <Card>
+                        <Container className="dr-example-container">
+                            <Row>
+                                <Col className = "mt-4 ml-4 mb-1 h4">รายการปีการศึกษา</Col>
+                                <Col className = "mt-4 mr-4 text-right">
+                                <Link to = "/user/add">
+                                <Button pill >เพิ่มภาคการเรียน</Button>
+                                </Link>
+                              
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                <CardBody>
+                            
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">ปีการศึกษา</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                    
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </CardBody>
+                                </Col>
+                            </Row>
+                           
+                            </Container>
+                        </Card>
+
+
+
+
                     </div>
-                    <div className="row">
-                        <div className="col-lg col-md-6 col-sm-6 mb-4">
-                            <div className="stats-small stats-small--1 card card-small">
-                                <div className="card-body p-0 d-flex">
-                                    <div className="d-flex flex-column m-auto">
-                                        <div className="stats-small__data text-center">
-                                            <span className="stats-small__label text-uppercase">USER</span>
-                                            <h6 className="stats-small__value count my-3">2,390</h6>
-                                        </div>
-                                        <div className="stats-small__data">
-                                            <span className="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                                        </div>
-                                    </div>
-                                    <canvas height={120} className="blog-overview-stats-small-1" />
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="col-lg col-md-6 col-sm-6 mb-4">
-                            <div className="stats-small stats-small--1 card card-small">
-                                <div className="card-body p-0 d-flex">
-                                    <div className="d-flex flex-column m-auto">
-                                        <div className="stats-small__data text-center">
-                                            <span className="stats-small__label text-uppercase">Pages</span>
-                                            <h6 className="stats-small__value count my-3">182</h6>
-                                        </div>
-                                        <div className="stats-small__data">
-                                            <span className="stats-small__percentage stats-small__percentage--increase">12.4%</span>
-                                        </div>
-                                    </div>
-                                    <canvas height={120} className="blog-overview-stats-small-2" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg col-md-4 col-sm-6 mb-4">
-                            <div className="stats-small stats-small--1 card card-small">
-                                <div className="card-body p-0 d-flex">
-                                    <div className="d-flex flex-column m-auto">
-                                        <div className="stats-small__data text-center">
-                                            <span className="stats-small__label text-uppercase">Comments</span>
-                                            <h6 className="stats-small__value count my-3">8,147</h6>
-                                        </div>
-                                        <div className="stats-small__data">
-                                            <span className="stats-small__percentage stats-small__percentage--decrease">3.8%</span>
-                                        </div>
-                                    </div>
-                                    <canvas height={120} className="blog-overview-stats-small-3" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg col-md-4 col-sm-6 mb-4">
-                            <div className="stats-small stats-small--1 card card-small">
-                                <div className="card-body p-0 d-flex">
-                                    <div className="d-flex flex-column m-auto">
-                                        <div className="stats-small__data text-center">
-                                            <span className="stats-small__label text-uppercase">Users</span>
-                                            <h6 className="stats-small__value count my-3">2,413</h6>
-                                        </div>
-                                        <div className="stats-small__data">
-                                            <span className="stats-small__percentage stats-small__percentage--increase">12.4%</span>
-                                        </div>
-                                    </div>
-                                    <canvas height={120} className="blog-overview-stats-small-4" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg col-md-4 col-sm-12 mb-4">
-                            <div className="stats-small stats-small--1 card card-small">
-                                <div className="card-body p-0 d-flex">
-                                    <div className="d-flex flex-column m-auto">
-                                        <div className="stats-small__data text-center">
-                                            <span className="stats-small__label text-uppercase">Subscribers</span>
-                                            <h6 className="stats-small__value count my-3">17,281</h6>
-                                        </div>
-                                        <div className="stats-small__data">
-                                            <span className="stats-small__percentage stats-small__percentage--decrease">2.4%</span>
-                                        </div>
-                                    </div>
-                                    <canvas height={120} className="blog-overview-stats-small-5" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* End Small Stats Blocks */}
-                </div>
-                {/* Small Stats Blocks */}
-            </main>
+                </main>
 
 
-        </div>
+            </div>
 
-    );
-  }
+        );
+    }
 }
 
 export default Users;

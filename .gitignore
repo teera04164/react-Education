@@ -22,3 +22,8 @@ yarn-error.log*
 
  // eslint-disable-next-line
  eslint-disable-next-line
+yarn.lock
+package-lock.json
+README.md
+.ignore
+README.old.md

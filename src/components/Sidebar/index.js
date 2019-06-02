@@ -6,7 +6,7 @@ export default class index extends Component {
     constructor() {
         super();
         this.state = {
-            id1: "",
+            id1: "active",
             id2 : ""
         };
 
@@ -62,22 +62,26 @@ export default class index extends Component {
                                 </form>
                                 <div className="nav-wrapper">
                                     <ul className="nav flex-column">
+                                    <NavLink to ="/deshboard">
                                         <li onClick={() => this.setState({ id1 : "active",id2 : ""})} className={id1 === 'active' ? "nav-item active" : "nav-item"}>
                                             <a className= "nav-link " >
-                                            <NavLink to ="/deshboard">
+                                          
                                                 <i className="material-icons">edit</i>
                                                 <span>หน้าหลัก</span>
-                                                </NavLink>
+                                               
                                             </a>
                                         </li>
+                                        </NavLink>
+                                        <NavLink to = '/user' >
                                         <li onClick={() => this.setState({id2 : "active",id1 : ""})} className={id2 === 'active' ? "nav-item active" : "nav-item"}>
                                             <a className="nav-link " >
-                                               <NavLink to = '/user' >
+                                             
                                                <i className="material-icons">vertical_split</i>
                                                 <span>ปีการศึกษา</span>
-                                               </NavLink>                                                                                         
+                                                                                                                                 
                                             </a>
                                         </li>
+                                        </NavLink>     
                                         {/*   <li className="nav-item">
               <a className="nav-link " href="add-new-post.html">
                 <i className="material-icons">note_add</i>
