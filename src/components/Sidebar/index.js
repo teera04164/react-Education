@@ -1,42 +1,48 @@
 import React, { Component } from 'react'
 import Deshboard from '../../container/Deshboard'
 import { NavLink } from 'react-router-dom'
-import routes from '../../routes';
+import routes from '../../routes'
+// import $ from 'Jquery'
 export default class index extends Component {
     constructor() {
         super();
         this.state = {
             id1: "active",
-            id2 : ""
+            id2: "",
+            id3: "",
+            togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0"
         };
 
     }
-   componentDidMount(){
-       
-   }
+    componentDidMount() {
 
-    getId = (id) => {
-        this.setState({id : id})
-        console.log(id);
-        
     }
 
-    // handleCheck = (id) =>{
-    //     console.log("handleCheck")
-    //     this.setState({id : id })
-        
-    // }
+    getId = (id) => {
+        this.setState({ id: id })
+        console.log(id);
+
+    }
+
+    handleCheck = (id) => {
+        // $('.toggle-sidebar').click(function (e) {
+        //     $('.main-sidebar').toggleClass('open');
+        //   })
+
+    }
 
     render() {
-        const { id1,id2 } = this.state
+        const { id1, id2, id3 } = this.state
         return (
             <div>
                 <div>
                     <div className="container-fluid">
                         <div className="row">
                             {/* Main Sidebar */}
+
                             <aside className="main-sidebar col-12 col-md-3 col-lg-2 px-0">
                                 <div className="main-navbar">
+
                                     <nav className="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                                         <a className="navbar-brand w-100 mr-0" href="#" >
                                             <div className="d-table m-auto">
@@ -56,39 +62,41 @@ export default class index extends Component {
                                                 {/* <i className="fas fa-search" /> */}
                                             </div>
                                         </div>
-                                        
+
                                         {/* <input className="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search" />  */}
                                     </div>
                                 </form>
                                 <div className="nav-wrapper">
                                     <ul className="nav flex-column">
-                                    <NavLink to ="/deshboard">
-                                        <li onClick={() => this.setState({ id1 : "active",id2 : ""})} className={id1 === 'active' ? "nav-item active" : "nav-item"}>
-                                            <a className= "nav-link " >
-                                          
-                                                <i className="material-icons">edit</i>
-                                                <span>หน้าหลัก</span>
-                                               
+                                        <NavLink to="/deshboard">
+                                            <li onClick={() => this.setState({ id1: "active", id2: "",id3: "", togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0 close" })} className={id1 === 'active' ? "nav-item active" : "nav-item"}>
+                                                <a className="nav-link " >
+
+                                                    <i className="material-icons">edit</i>
+                                                    <span>หน้าหลัก</span>
+
+                                                </a>
+                                            </li>
+                                        </NavLink>
+                                        <NavLink to='/user' >
+                                            <li onClick={() => this.setState({ id2: "active", id1: "",id3: ""})} className={id2 === 'active' ? "nav-item active" : "nav-item"}>
+                                                <a className="nav-link " >
+
+                                                    <i className="material-icons">vertical_split</i>
+                                                    <span>ปีการศึกษา</span>
+
+                                                </a>
+                                            </li>
+                                        </NavLink>
+                                        <NavLink to='/class' >
+                                        <li className="nav-item" onClick={() => this.setState({ id2: "", id1: "",id3:"active"})} className={id3 === 'active' ? "nav-item active" : "nav-item"}>
+                                            <a className="nav-link">
+                                                <i className="material-icons">note_add</i>
+                                                <span>ห้องเรียน</span>
                                             </a>
                                         </li>
                                         </NavLink>
-                                        <NavLink to = '/user' >
-                                        <li onClick={() => this.setState({id2 : "active",id1 : ""})} className={id2 === 'active' ? "nav-item active" : "nav-item"}>
-                                            <a className="nav-link " >
-                                             
-                                               <i className="material-icons">vertical_split</i>
-                                                <span>ปีการศึกษา</span>
-                                                                                                                                 
-                                            </a>
-                                        </li>
-                                        </NavLink>     
                                         {/*   <li className="nav-item">
-              <a className="nav-link " href="add-new-post.html">
-                <i className="material-icons">note_add</i>
-                <span>Add New Post</span>
-              </a>
-            </li>
-            <li className="nav-item">
               <a className="nav-link " href="form-components.html">
                 <i className="material-icons">view_module</i>
                 <span>Forms &amp; Components</span>
@@ -179,11 +187,11 @@ export default class index extends Component {
                                                     <a className="dropdown-item" href="add-new-post.html">
                                                         <i className="material-icons">note_add</i> Add New Post</a>
                                                     <div className="dropdown-divider" />
-                                                    <NavLink to = "/login">
-                                                    <a className="dropdown-item text-danger" href="#">
-                                                        <i className="material-icons text-danger"></i> Logout </a>
+                                                    <NavLink to="/login">
+                                                        <a className="dropdown-item text-danger" href="#">
+                                                            <i className="material-icons text-danger"></i> Logout </a>
                                                     </NavLink>
-                                                   
+
                                                 </div>
                                             </li>
                                         </ul>

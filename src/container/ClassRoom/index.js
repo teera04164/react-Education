@@ -13,7 +13,7 @@ class Users extends React.Component {
                         <Card>
                         <Container className="dr-example-container">
                             <Row>
-                                <Col className = "mt-4 ml-4 mb-1 h4">รายการปีการศึกษา</Col>
+                                <Col className = "mt-4 ml-4 mb-1 h4">ห้องเรียน</Col>
                                 <Col className = "mt-4 mr-4 text-right">
                                 <Link to = "/user/add">
                                 <Button pill >เพิ่มภาคการเรียน</Button>
