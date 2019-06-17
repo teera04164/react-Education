@@ -5,6 +5,9 @@ import Login from '../container/Login'
 import User from '../container/User'
 import AddSemester from '../container/User/add'
 import ClassRoom from '../container/ClassRoom'
+import UserDetail from '../container/User/detail'
+import ClassDetail from '../container/ClassRoom/detailClass'
+import SubJect from '../container/Subject'
 
 const routes = (
   <Switch>
@@ -12,8 +15,11 @@ const routes = (
             <Route exact path="/" component={Login}/>
             <Route exact path="/deshboard" component={Deshboard}/>
             <Route exact path="/user" component={User}/>
+            <Route exact path="/user/:_id/detail" component={UserDetail}/>
             <Route exact path="/user/add" component={AddSemester}/>
             <Route exact path="/class" component = {ClassRoom}/>
+            <Route exact path="/class/:_year/:_class" component = {ClassDetail}/>
+            <Route exact path="/subject" component = {SubJect}/>
             {/* <Route exact path="/deshboard" component={Des}/>
             <Route exact path="/semester" component={Semester}/>
             <Route exact path="/learnning_management" component={Learn}/>

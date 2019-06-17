@@ -12,6 +12,7 @@ export default class index extends Component {
             id1: "active",
             id2: "",
             id3: "",
+            id4: "",
             togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0",
             isShow: false
 
@@ -51,7 +52,7 @@ export default class index extends Component {
     render() {
         console.log("in Sidebar -> ",window.location.pathname);
         
-        const { id1, id2, id3 } = this.state
+        const { id1, id2, id3,id4 } = this.state
         return (
             <div>
                 <div>
@@ -96,7 +97,7 @@ export default class index extends Component {
                                     <ul className="nav flex-column">
                                         <div className="teera1">
                                             <NavLink to="/deshboard">
-                                                <li onClick={() => this.setState({ id1: "active", id2: "", id3: "", togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0 close" })} className={id1 === 'active' ? "nav-item active" : "nav-item"}>
+                                                <li onClick={() => this.setState({ id1: "active", id2: "", id3: "",id4 : "", togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0 close" })} className={id1 === 'active' ? "nav-item active" : "nav-item"}>
                                                     <a className="nav-link" href = "fakeURL">
 
                                                         <i className="material-icons" id="teera">edit</i>
@@ -106,7 +107,7 @@ export default class index extends Component {
                                                 </li>
                                             </NavLink>
                                             <NavLink to='/user' >
-                                                <li onClick={() => this.setState({ id2: "active", id1: "", id3: "" })} className={id2 === 'active' ? "nav-item active" : "nav-item"}>
+                                                <li onClick={() => this.setState({ id2: "active", id1: "", id3: "" ,id4 : ""})} className={id2 === 'active' ? "nav-item active" : "nav-item"}>
                                                     <a className="nav-link "href = "fakeURL" >
 
                                                         <i className="material-icons">vertical_split</i>
@@ -116,10 +117,18 @@ export default class index extends Component {
                                                 </li>
                                             </NavLink>
                                             <NavLink to='/class' >
-                                                <li className="nav-item" onClick={() => this.setState({ id2: "", id1: "", id3: "active" })} className={id3 === 'active' ? "nav-item active" : "nav-item"}>
+                                                <li className="nav-item" onClick={() => this.setState({ id2: "", id1: "", id3: "active" ,id4 : ""})} className={id3 === 'active' ? "nav-item active" : "nav-item"}>
                                                     <a className="nav-link" href = "fakeURL">
                                                         <i className="material-icons">note_add</i>
                                                         <span>ห้องเรียน</span>
+                                                    </a>
+                                                </li>
+                                            </NavLink>
+                                            <NavLink to='/subject' >
+                                                <li className="nav-item" onClick={() => this.setState({ id2: "", id1: "", id3: "",id4 : "active" })} className={id4 === 'active' ? "nav-item active" : "nav-item"}>
+                                                    <a className="nav-link" href = "fakeURL">
+                                                        <i className="material-icons">note_add</i>
+                                                        <span>รายวิชา / กิจกรรม</span>
                                                     </a>
                                                 </li>
                                             </NavLink>

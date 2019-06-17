@@ -5,6 +5,19 @@ import { Card, CardBody, CardTitle, Button , Container, Row, Col } from "shards-
 const User = ({ match }) => <p>{match.params.id}</p>;
 
 class Users extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            _year : '',
+            _class : '',
+            notification: false
+        }
+    }
+
+    componentDidMount() {
+        const { _year, _class } = this.props.match.params
+        this.setState({ _year, _class })
+    }
     render() {
         return (
             <div>
@@ -13,10 +26,10 @@ class Users extends React.Component {
                         <Card>
                         <Container className="dr-example-container">
                             <Row>
-                                <Col className = "mt-4 ml-4 mb-1 h4">ห้องเรียน</Col>
+                                <Col className = "mt-4 ml-4 mb-1 h4">ชั้นมัธยมศึกษาปีที่ {this.state._class}</Col>
                                 <Col className = "mt-4 mr-4 text-right">
                                 <Link to = "/user/add">
-                                <Button pill >เพิ่มภาคการเรียน</Button>
+                                <Button pill >นำเข้านักเรียน</Button>
                                 </Link>
                               
                                 </Col>
@@ -28,15 +41,18 @@ class Users extends React.Component {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">ปีการศึกษา</th>
-                                        <th scope="col"></th>
+                                        <th scope="col">เลขที่</th>
+                                        <th scope="col">เลขประจำตัว</th>
+                                        <th scope="col">ชื่อ - สกุล</th>
+                                        <th scope="col">สถานะภาพ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 1/1</td>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
                                         <td>
                                             <Link to = "/class/1-2562/1-1">
                                             <span class="badge badge-pill badge-info">
@@ -49,56 +65,10 @@ class Users extends React.Component {
                                        
                                     </tr>
                                     <tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 1/2</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 1/3</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr>
-                                    <tr>
                                         <th scope="row">2</th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 2/1</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 2/2</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 2/3</td>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
                                         <td> <Link to = "/user">
                                             <span class="badge badge-pill badge-info">
                                             <i className = "fas fa-search">
@@ -110,7 +80,9 @@ class Users extends React.Component {
                                     </tr>
                                     <tr>
                                         <th scope="row">3</th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 3/1</td>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
                                         <td> <Link to = "/user">
                                             <span class="badge badge-pill badge-info">
                                             <i className = "fas fa-search">
@@ -121,75 +93,10 @@ class Users extends React.Component {
                                        
                                     </tr>
                                     <tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 3/2</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 3/2</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr><tr>
                                         <th scope="row">4</th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 4/1</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr><tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 4/2</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr><tr>
-                                        <th scope="row">5</th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 5/1</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr><tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 5/2</td>
-                                        <td> <Link to = "/user">
-                                            <span class="badge badge-pill badge-info">
-                                            <i className = "fas fa-search">
-                                            </i>
-                                            &nbsp;รายระเอียด
-                                            </span>
-                                            </Link></td>
-                                       
-                                    </tr><tr>
-                                        <th scope="row">6</th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 6/1</td>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
                                         <td> <Link to = "/user">
                                             <span class="badge badge-pill badge-info">
                                             <i className = "fas fa-search">
@@ -200,8 +107,10 @@ class Users extends React.Component {
                                        
                                     </tr>
                                     <tr>
-                                        <th scope="row"></th>
-                                        <td>ชั้นมัธยมศึกษาปีที่ 6/2</td>
+                                        <th scope="row">5</th>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
                                         <td> <Link to = "/user">
                                             <span class="badge badge-pill badge-info">
                                             <i className = "fas fa-search">
@@ -211,6 +120,76 @@ class Users extends React.Component {
                                             </Link></td>
                                        
                                     </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
+                                        <td> <Link to = "/user">
+                                            <span class="badge badge-pill badge-info">
+                                            <i className = "fas fa-search">
+                                            </i>
+                                            &nbsp;รายระเอียด
+                                            </span>
+                                            </Link></td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">7</th>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
+                                        <td> <Link to = "/user">
+                                            <span class="badge badge-pill badge-info">
+                                            <i className = "fas fa-search">
+                                            </i>
+                                            &nbsp;รายระเอียด
+                                            </span>
+                                            </Link></td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">8</th>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
+                                        <td> <Link to = "/user">
+                                            <span class="badge badge-pill badge-info">
+                                            <i className = "fas fa-search">
+                                            </i>
+                                            &nbsp;รายระเอียด
+                                            </span>
+                                            </Link></td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">9</th>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
+                                        <td> <Link to = "/user">
+                                            <span class="badge badge-pill badge-info">
+                                            <i className = "fas fa-search">
+                                            </i>
+                                            &nbsp;รายระเอียด
+                                            </span>
+                                            </Link></td>
+                                       
+                                    </tr><tr>
+                                        <th scope="row">10</th>
+                                        <td>04164</td>
+                                        <td>ธีรพงษ์  สิทธิการ</td>
+                                        <td>กำลังศึกษา</td>
+                                        <td> <Link to = "/user">
+                                            <span class="badge badge-pill badge-info">
+                                            <i className = "fas fa-search">
+                                            </i>
+                                            &nbsp;รายระเอียด
+                                            </span>
+                                            </Link></td>
+                                       
+                                    </tr>
+                                       
 
                                     
                                 </tbody>

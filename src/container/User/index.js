@@ -51,7 +51,12 @@ class Users extends React.Component {
                                     <tr>
                                         <th scope="row">2</th>
                                         <td>ปีการศึกษาที่ 2/2562</td>
-                                        <td> <Link to = "/user">
+                                        <td> <Link to = {{
+                                            pathname : `/user/${"2-2562"}/detail`,
+                                            state : {
+                                                notification : true
+                                            }
+                                        }}>
                                             <span class="badge badge-pill badge-info">
                                             <i className = "fas fa-search">
                                             </i>
