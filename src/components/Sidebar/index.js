@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom'
 import routes from '../../routes'
 import $ from 'jquery'
 
+const urlImg = 'https://scontent.fbkk2-7.fna.fbcdn.net/v/t1.0-9/44328574_2823448087730291_8022456570522632192_n.jpg?_nc_cat=108&_nc_eui2=AeHGmK02OixTV1HyBYC2K2G2I7OKuSulNa_lo7XI_5vv1olwcOo_bBZE272upRiKX_b-b3g4s-TO-j0aYpInKTP_dn6wxcuG_SyTygnkrVslGQ&_nc_oc=AQlYAzhkd-B0K1pWhToXQGL7OL445gTDHy9lbLB_VglXJzJirRPXkYS8WXUJlVp00Es&_nc_ht=scontent.fbkk2-7.fna&oh=30e0574f22b1611f0a20157b36ebe4b9&oe=5D82BC87'
+
 // import $ from 'Jquery'
 export default class index extends Component {
     constructor() {
@@ -14,24 +16,42 @@ export default class index extends Component {
             id3: "",
             id4: "",
             togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0",
-            isShow: false
+            isShow: false,
+            i : 1
 
         };
 
     }
+
     componentDidMount() {
+
+       
         if (window.location.pathname === "/home") {
-            console.log("TCL: index -> componentDidMount -> window.location", window.location)
             this.setState({ isShow: true })
         }
 
         else {
             this.setState({ isShow: false })
         }
-        $('.teera1').click((e) => {
-            $('.main-sidebar').toggleClass('open');
+        $('.teera3').click((e) => {
+            console.log("teera 1")
+            
+            // $('.main-sidebar').toggleClass('open')
 
         })
+        $('.teera2').click((e) => {
+            console.log("teera 2");
+            
+            // $('.main-sidebar').toggleClass('open')
+
+        })
+
+        // $('#togle1').click((e) => {
+        //     console.log("in togle1");
+            
+        //     $('.main-sidebar').toggleClass('open')
+
+        // })
 
 
     }
@@ -60,25 +80,23 @@ export default class index extends Component {
                         <div className="row">
                             {/* Main Sidebar */}
 
-                            <aside className="main-sidebar col-12 col-md-3 col-lg-2 px-0">
+                            <aside className="main-sidebar col-12 col-md-3 col-lg-2 px-0" id = "togle1">
                                 <div className="main-navbar">
 
                                     <nav className="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
                                         <a className="navbar-brand w-100 mr-0" href="fakeURL" >
                                             <div className="d-table m-auto">
                                                 <img id="main-logo" className="d-inline-block align-top mr-1" style={{ maxWidth: 25 }} src="images/shards-dashboards-logo.svg" alt="Shards Dashboard" />
-                                                <span className="d-none d-md-inline ml-1 " >Shards Dashboard</span>
+                                                <span className="d-none d-md-inline ml-1 " >SMS PHUPHAMAN</span>
                                             </div>
                                         </a>
-                                        <div className="teera1">
+                                        <div className="teera2">
                                             <a className="toggle-sidebar d-sm-inline d-md-none d-lg-none">
                                                 <i className="material-icons">
                                                     arrow_back
                                                 </i>
                                             </a>
                                         </div>
-
-
                                     </nav>
                                 </div>
 
@@ -100,7 +118,7 @@ export default class index extends Component {
                                                 <li onClick={() => this.setState({ id1: "active", id2: "", id3: "",id4 : "", togle: "main-sidebar col-12 col-md-3 col-lg-2 px-0 close" })} className={id1 === 'active' ? "nav-item active" : "nav-item"}>
                                                     <a className="nav-link" href = "fakeURL">
 
-                                                        <i className="material-icons" id="teera">edit</i>
+                                                        <i className="material-icons" >edit</i>
                                                         <span>หน้าหลัก</span>
 
                                                     </a>
@@ -108,7 +126,7 @@ export default class index extends Component {
                                             </NavLink>
                                             <NavLink to='/user' >
                                                 <li onClick={() => this.setState({ id2: "active", id1: "", id3: "" ,id4 : ""})} className={id2 === 'active' ? "nav-item active" : "nav-item"}>
-                                                    <a className="nav-link "href = "fakeURL" >
+                                                    <a className="nav-link " href = "fakeURL" >
 
                                                         <i className="material-icons">vertical_split</i>
                                                         <span>ปีการศึกษา</span>
@@ -213,8 +231,9 @@ export default class index extends Component {
                                             </li>
                                             <li className="nav-item dropdown">
                                                 <a className="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="fakeURL" role="button" aria-haspopup="true" aria-expanded="false">
-                                                    <img className="user-avatar rounded-circle mr-2" src="images/avatars/0.jpg" alt="User Avatar" />
-                                                    <span className="d-none d-md-inline-block">Sierra Brooks</span>
+                                                    <img className="user-avatar rounded-circle mr-2" src={urlImg} alt="User Avatar" />
+                                                    <span className="d-none d-md-inline-block">ธีรพงษ์  สิทธิการ</span>
+                                
                                                 </a>
                                                 <div className="dropdown-menu dropdown-menu-small">
                                                     <a className="dropdown-item" href="user-profile-lite.html">
@@ -234,8 +253,8 @@ export default class index extends Component {
                                         </ul>
 
                                         <nav className="nav">
-                                            <div className="teera1">
-                                                <a href="fakeURL" className="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
+                                            <div className="teera3">
+                                                <a href="fakeURL" className="nav-link nav-link-icon toggle-sidebar d-md-inline d-lg-none  text-center border-left" data-toggle="collapse" data-target=".header-navbar" aria-expanded="false" aria-controls="header-navbar">
                                                     <i className="material-icons">
                                                         format_align_justify
                                                     </i>

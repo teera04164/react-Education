@@ -71,8 +71,13 @@ $(document).ready(function () {
   /**
    * Sidebar toggles
    */
-  $('.toggle-sidebar').click(function (e) {
-    $('.main-sidebar').toggleClass('open');
+  $('.toggle-sidebar').click(function (e) {  
+    console.log("TCL: .toggle-sidebar")
+    $('.main-sidebar').toggleClass('open')
+  });
+
+  $('.teera1').click(function (e) {
+    $('.main-sidebar').toggleClass('open')
   });
 });
 

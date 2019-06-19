@@ -24,8 +24,8 @@ class Users extends React.Component {
                             <Row>
                                 <Col>
                                 <CardBody>
-                            
-                            <table class="table">
+                            <div className = "table-responsive">
+                            <table class="table ">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -122,6 +122,8 @@ class Users extends React.Component {
                                     </tr>
                                 </tbody>
                             </table>
+                            </div>
+                            
                         </CardBody>
                                 </Col>
                             </Row>
