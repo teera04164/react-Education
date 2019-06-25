@@ -15,7 +15,7 @@ class Users extends React.Component {
                             <Row>
                                 <Col className = "mt-4 ml-4 mb-1 h4">รายวิชา</Col>
                                 <Col className = "mt-4 mr-4 text-right">
-                                <Link to = "/user/add">
+                                <Link to = "/subject/add">
                                 <Button pill >เพิ่มรายวิชา</Button>
                                 </Link>
                               

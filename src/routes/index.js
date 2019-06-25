@@ -4,10 +4,15 @@ import Deshboard from '../container/Deshboard'
 import Login from '../container/Login'
 import User from '../container/User'
 import AddSemester from '../container/User/add'
-import ClassRoom from '../container/ClassRoom'
 import UserDetail from '../container/User/detail'
+
+import ClassRoom from '../container/ClassRoom'
 import ClassDetail from '../container/ClassRoom/detailClass'
+
 import SubJect from '../container/Subject'
+import addSubject from '../container/Subject/addSubject'
+
+import Teacher from '../container/Teacher'
 
 const routes = (
   <Switch>
@@ -20,6 +25,8 @@ const routes = (
             <Route exact path="/class" component = {ClassRoom}/>
             <Route exact path="/class/:_year/:_class" component = {ClassDetail}/>
             <Route exact path="/subject" component = {SubJect}/>
+            <Route exact path='/subject/add' component = {addSubject}/>
+            <Route exact path='/teacher' component = {Teacher}/>
             {/* <Route exact path="/deshboard" component={Des}/>
             <Route exact path="/semester" component={Semester}/>
             <Route exact path="/learnning_management" component={Learn}/>
